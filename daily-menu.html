@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghazi's Deli | Daily Menu</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/bistro-icons.css">
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/settings.css">
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/loader.css">
+<link rel="shortcut icon" href="images/favicon.png">
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+  /* ===== Daily Menu Sidebar Nav ===== */
+:root{
+  --accent: #E25111;
+  --ink: #111;
+  --paper: #fff;
+  --border: rgba(0,0,0,.12);
+}
+
+/* Ensure sections don't get hidden under sticky header */
+.menu-section { scroll-margin-top: 120px; }
+
+/* Sidebar container */
+.menu-sidenav{
+  position: sticky;
+  top: 120px; /* starts below header area */
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.menu-sidenav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-sidenav li + li{ margin-top: 8px; }
+
+.menu-sidenav a{
+  display: block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "BebasRegular", sans-serif;
+  font-size: 20px;
+  letter-spacing: .6px;
+  border: 1px solid transparent;
+  transition: all .15s ease;
+}
+
+.menu-sidenav a:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.menu-sidenav a.is-active{
+  background: rgba(226,81,17,.10);
+  border-color: rgba(226,81,17,.45);
+  color: var(--accent);
+}
+
+/* Optional: slightly tighten content spacing next to sidebar */
+.menu-layout #menuContent{
+  padding-left: 10px;
+}
+
+/* ===== Mobile: horizontal sticky nav ===== */
+.menu-sidenav--mobile{
+  position: sticky;
+  top: 70px; /* below your main nav */
+  z-index: 50;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.menu-sidenav--mobile a{
+  display: inline-block;
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 18px;
+}
+
+/* Hide sidebar when screen is small handled by bootstrap hidden-xs/visible-xs */
+
+</style>
+</head>
+
+<body>
+
+<!--Loader-->
+<div class="loader"> 
+   <div class="cssload-container">
+     <div class="cssload-circle"></div>
+     <div class="cssload-circle"></div>
+   </div>
+</div>
+
+<!--Top bar-->
+<div class="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="pull-left hidden-xs">Ghazi's Deli, Fresh and Homemade</p>
+        <p class="pull-right"><i class="fa fa-phone"></i>Order Online or Call Us at 860-632-2442</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<header id="main-navigation">
+  <div id="navigation" data-spy="affix" data-offset-top="20">
+    <div class="container">
+      <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="false"> 
+            <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> 
+            </button>
+           <a class="navbar-brand" href="index.html"><img src="images/ghazi-deli-logo.png" alt="logo" class="img-responsive"></a> 
+         </div>
+        
+            <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                   <a href="index.html">Home</a>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="active"><a href="daily-menu.html">Daily Menu</a></li>
+                <li><a href="catering-menu.html">Catering Menu</a></li>
+                <li><a href="order.html">Order Now</a></li>
+              </ul>
+            </div>
+         </nav>
+         </div>
+       </div>
+     </div>
+  </div>
+</header>
+
+
+<!--Page header & Title-->
+<section id="page_header">
+<div class="page_title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+         <h2 class="title">Menu</h2>
+         <p>Your everyday favorites, freshly made right here.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!--Pricings-->
+<section id="pricing" class="padding-top">
+  <div class="container">
+    <!-- vertical nav bar -->
+    <div class="row menu-layout">
+      <!-- Sidebar -->
+      <aside class="col-md-3 col-sm-4 hidden-xs" id="menuSidebar">
+        <nav class="menu-sidenav" aria-label="Daily menu sections">
+          <ul>
+            <li><a href="#breakfast" class="is-active">Breakfast</a></li>
+            <li><a href="#hot-sandwiches">Hot Sandwiches</a></li>
+            <li><a href="#cold-cuts">Cold Cuts</a></li>
+            <li><a href="#classics">Classics</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#salads">Salads</a></li>
+            <li><a href="#cheeses">Cheeses</a></li>
+            <li><a href="#toppings">Toppings & Sauces</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Mobile / small screens: horizontal nav -->
+      <div class="col-xs-12 visible-xs" id="menuSidebarMobile" style="margin-bottom: 50px;">
+        <nav class="menu-sidenav menu-sidenav--mobile" aria-label="Daily menu sections (mobile)">
+          <a href="#breakfast" class="is-active">Breakfast</a>
+          <a href="#hot-sandwiches">Hot</a>
+          <a href="#cold-cuts">Cold</a>
+          <a href="#classics">Classics</a>
+          <a href="#specials">Specials</a>
+          <a href="#salads">Salads</a>
+          <a href="#cheeses">Cheese</a>
+          <a href="#toppings">Toppings</a>
+        </nav>
+      </div>
+
+      <!-- Main content column -->
+      <div class="col-md-9 col-sm-8" id="menuContent">
+        <div class="row menu-section" id="breakfast">
+          <div class="col-md-12">
+            <h2 class="heading">Breakfast</h2>
+            <p>On Hard Roll, Bagel, or Brioche Bun</p>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>Egg and Cheese<strong>$5</strong></li>
+                  <li>Ham, Egg and Cheese <strong>$6</strong> </li>
+                  <li>Bacon, Egg and Cheese <strong>$6</strong> </li>
+                  <li>Sausage, Egg and Cheese <strong>$6</strong> </li>
+                  <li>Toasted Bagel w/ Cream Cheese <strong>$2.50</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="hot-sandwiches">
+          <div class="col-md-12">
+            <h2 class="heading">Hot Sandwiches</h2>
+            <p>6 inch/Hard Roll/Footlong</p>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>Chicken Cutlet  <strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>Meatball <strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>Sausage <strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>Smash Burger (served on a brioche bun) <strong>$8.99</strong> </li>
+                  <li>Chopped Cheese <strong>$6.95 | - | $8.99</strong> </li>
+                  <li>Steak and Cheese <strong>$ 9.99| - | $15.95</strong> </li>
+                  <li>Philly Cheeseteak<strong>$9.99| - | $15.95</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="cold-cuts">
+          <div class="col-md-12">
+            <h2 class="heading">Cold Cuts</h2>
+            <p>6 inch/Hard Roll/Footlong/LB</p>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>Turkey  <strong>$7.95 | $7.95 | $9.95 | $9.99</strong> </li>
+                  <li>Turkey Ham <strong>$7.95 | $7.95 | $9.95 | $9.99</strong> </li>
+                  <li>Pastrami<strong>$8.95 | $8.95 | $11.95 | $14.99</strong> </li>
+                  <li>Beef Salami <strong>$7.95 | $7.95 | $9.95 | $12.99</strong> </li>
+                  <li>Roast Beef <strong>$8.95 | $8.95 | $11.95 | $14.99</strong> </li>
+                  <li>BLT<strong>$7.95 | $7.95 | $9.95 | -</strong> </li>
+                  <li>Italian<strong>$8.95 | $8.95 | $11.95 | -</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="classics">
+          <div class="col-md-12">
+            <h2 class="heading">Classics</h2>
+            <p>6 inch/Hard Roll/Footlong</p>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>Buffalo Chicken  <strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>BBQ Chicken<strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>Chicken Salad<strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>Tuna Salad<strong>$7.95 | $7.95 | $9.95</strong> </li>
+                  <li>Chicken Bacon Ranch<strong>$8.95 | $8.95 | $10.95</strong> </li>
+                  <li>Grilled Chicken<strong>$7.95 | $7.95 | $9.95</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="specials">
+          <div class="col-md-12">
+            <h2 class="heading">Specials</h2>
+            <p>Changes Daily</p>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>(Monday) Chicken Pot Pie <strong>$7 per 9" slice or $25 for a whole pie </strong> </li>
+                  <li>(Tuesday) Chili Dogs<strong>2 Chili Dogs for $5</strong> </li>
+                  <li>(Wednesday) Butter Chicken<strong>$10 for a 7 inch platter with a side of lettuce and tomatos</strong> </li>
+                  <li>(Thursday) Beef Tacos<strong>2 Tacos for $5</strong> </li>
+                  <li>(Friday) Beef Biryani<strong>$10 for a 7 inch platter with salad and dressing on the side</strong> </li>
+                  <li>(Friday) Mac 'n Cheese<strong>$10 for a 1LB platter</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="salads">
+          <div class="col-md-12">
+            <h2 class="heading">Salads</h2>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>Chicken Mac <strong>$6.99/LB</strong> </li>
+                  <li>BLT Mac <strong>$6.99/LB</strong> </li>
+                  <li>Tuna Mac <strong>$6.99/LB</strong> </li>
+                  <li>Broccoli Pasta <strong>$6.99/LB</strong> </li>
+                  <li>Veggie Mac <strong>$5.99/LB</strong> </li>
+                  <li>Potato Salads <strong>$6.99/LB</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="cheeses">
+          <div class="col-md-12">
+            <h2 class="heading">Cheeses</h2>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>American Cheese <strong>$7.99/LB</strong> </li>
+                  <li>Pepper Jack<strong>$7.99/LB</strong> </li>
+                  <li>Provolone <strong>$7.99/LB</strong> </li>
+                  <li>Swiss <strong>$7.99/LB</strong> </li>
+                  <li>Cheddar <strong>$7.99/LB</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-section" id="toppings">
+          <div class="col-md-12">
+            <h2 class="heading">Toppings and Sauces</h2>
+            <hr class="heading_space">
+          </div>
+          <div class="col-sm-12">
+            <div class="price padding-bottom">
+              <div class="price_body">
+                 <ul class="pricing_feature">
+                  <li>Lettuce, tomato, Red onion, cucumber, Bell peppers, spinach, Jalapeno, hot cherry pepper, banana peppers, roasted pepper and onion, pickles, olives </li>
+                  <li>Ranch, Ketchup, Mustard, Hot Sauce, Relish, Honey Mustard, Deli Mustard, BBQ, Chipotle Mayo </li>
+                  <li>Tuna Mac <strong>$6.99/LB</strong> </li>
+                  <li>Broccoli Pasta <strong>$6.99/LB</strong> </li>
+                  <li>Veggie Mac <strong>$5.99/LB</strong> </li>
+                  <li>Potato Salads <strong>$6.99/LB</strong> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Footer-->
+<footer class="padding-top bg_black">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Why Bistro?</h4>
+        <hr class="half_space">
+        <p class="half_space">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore dolor in hendrerit in vulputate.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl.</p>
+      </div>
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Quick Links</h4>
+        <hr class="half_space">
+        <ul class="widget_links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="location.html">Locations</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="faq.html">Faq's</a></li>
+          <li><a href="order.html">Order Now</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="food.html">Food</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Newsletter</h4>
+        <hr class="half_space">
+        <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get updates fresh updates.</p>
+        <div id="result1" class="text-center"></div>        
+        
+       <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
+          <div class="form-group">
+            <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn-submit button3" value="Subscribe" />
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Get in Touch</h4>
+        <hr class="half_space">
+        <p>Restaurant, to consequat ipsum nec sagittis sem.</p>
+        <p class="address"><i class="icon-location"></i>Restaurant, Manhattan 1258,New York, USA Lahore</p>
+        <p class="address"><i class="fa fa-phone"></i>(+1) 234 567 8901</p>
+        <p class="address"><i class="icon-dollar"></i><a href="mailto:hello@website.com">hello@website.com</a></p>
+      </div> 
+    </div>
+    <div class="row">
+     <div class="col-md-12">
+        <div class="copyright clearfix">
+          <p>Copyright &copy; 2016 Bistro. All Right Reserved</p>
+          <ul class="social_icon">
+               <li><a href="#." class="facebook"><i class="icon-facebook5"></i></a></li>
+               <li><a href="#." class="twitter"><i class="icon-twitter4"></i></a></li>
+               <li><a href="#." class="google"><i class="icon-google"></i></a></li>
+              </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#." id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
+
+<script src="js/jquery-2.2.3.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.parallax-1.1.3.js"></script>
+<script src="js/jquery.appear.js"></script>  
+<script src="js/jquery-countTo.js"></script>
+<script src="js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/functions.js" type="text/javascript"></script>
+<script>
+(function () {
+  const accentClass = 'is-active';
+  const navLinks = Array.from(document.querySelectorAll('.menu-sidenav a[href^="#"]'));
+  const sections = navLinks
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  // Smooth scrolling (vanilla)
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  function setActiveById(id) {
+    navLinks.forEach(a => a.classList.toggle(accentClass, a.getAttribute('href') === '#' + id));
+  }
+
+  // Active link highlighting
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      // pick the most visible intersecting section
+      const visible = entries
+        .filter(en => en.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visible && visible.target && visible.target.id) {
+        setActiveById(visible.target.id);
+      }
+    }, {
+      root: null,
+      rootMargin: '-20% 0px -65% 0px', // tunes when a section becomes "active"
+      threshold: [0.1, 0.25, 0.5]
+    });
+
+    sections.forEach(sec => obs.observe(sec));
+  } else {
+    // Fallback: simple scroll spy
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY + 140;
+      let current = sections[0];
+      sections.forEach(sec => {
+        if (sec.offsetTop <= y) current = sec;
+      });
+      if (current && current.id) setActiveById(current.id);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
