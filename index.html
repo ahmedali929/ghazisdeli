@@ -24,6 +24,79 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<style>
+  /* Home page specials list */
+.home-specials {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.home-specials li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #fafafa;
+  border-left: 4px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.home-specials li:nth-child(odd) {
+  background: #fff;
+}
+
+.special-name {
+  font-weight: 600;
+  color: #222;
+  margin-right: auto;
+}
+
+/* Day badge */
+.day-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #E25111;
+  border: 1px solid #E25111;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+/* Limited badge */
+.limited-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #777;
+  background: rgba(0,0,0,0.05);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+/* Today highlight */
+.home-specials li.is-today {
+  background: rgba(226, 81, 17, 0.08) !important;
+  border-left-color: #E25111;
+}
+
+.home-specials li.is-today .day-badge {
+  background: #E25111;
+  color: #fff;
+}
+
+/* Muted rows */
+.home-specials li.muted {
+  font-style: italic;
+  color: #777;
+  background: none;
+  border-left: none;
+  padding-left: 0;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -320,19 +393,56 @@
       <div class="col-md-4">
         <h2 class="heading">Our &nbsp; Specials</h2>
         <hr class="heading_space">
-        <ul class="menu_widget">
-          <li>Chicken Pot Pie<span>Monday</span></li>
-          <li>Chili Dogs<span>Tuesday</span></li>
-          <li>Butter Chicken over Rice<span>Wednesday</span></li>
-          <li>Beef Tacos<span>Thursday</span></li>
-          <li>Beef Biryani<span>Friday</span></li>
-          <li>Mac 'n Cheese<span>Friday</span></li>
-          <li>Seasonal Rotations!</li>
-          <li>More Specials Coming Soon!</li>
-        </ul>
-         <p>A different homemade special every day, with new favorites always on the way.</p>
+        <ul class="home-specials" id="home-specials">
+  <li data-day="mon">
+    <span class="special-name">Chicken Pot Pie</span>
+    <span class="day-badge">Monday</span>
+    <span class="limited-badge">Limited</span>
+  </li>
+
+  <li data-day="tue">
+    <span class="special-name">Chili Dogs</span>
+    <span class="day-badge">Tuesday</span>
+    <span class="limited-badge">Limited</span>
+  </li>
+
+  <li data-day="wed">
+    <span class="special-name">Butter Chicken over Rice</span>
+    <span class="day-badge">Wednesday</span>
+    <span class="limited-badge">Limited</span>
+  </li>
+
+  <li data-day="thu">
+    <span class="special-name">Beef Tacos</span>
+    <span class="day-badge">Thursday</span>
+    <span class="limited-badge">Limited</span>
+  </li>
+
+  <li data-day="fri">
+    <span class="special-name">Beef Biryani</span>
+    <span class="day-badge">Friday</span>
+    <span class="limited-badge">Limited</span>
+  </li>
+
+  <li data-day="fri">
+    <span class="special-name">Mac &#39;n Cheese</span>
+    <span class="day-badge">Friday</span>
+    <span class="limited-badge">Limited</span>
+  </li>
+
+  <li class="muted">
+    Seasonal Rotations &amp; More Specials Coming Soon!
+  </li>
+</ul>
       </div>
     </div>
+     <div class="row">
+      <div class="col-md-12">
+    <a href="order.html" class="order-cta-btn">
+    Order Now →
+  </a>
+</div>
+</div>
   </div>
 </section>
 
@@ -788,7 +898,18 @@
 </footer>
 
 <a href="#" id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
+<script>
+  (function () {
+    const dayMap = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+    const todayKey = dayMap[new Date().getDay()];
 
+    const list = document.getElementById("home-specials");
+    if (!list) return;
+
+    const todayItems = list.querySelectorAll('li[data-day="' + todayKey + '"]');
+    todayItems.forEach(item => item.classList.add("is-today"));
+  })();
+</script>
 <script src="js/jquery-2.2.3.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/jquery.themepunch.tools.min.js"></script>
