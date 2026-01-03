@@ -102,7 +102,71 @@
   font-size: 18px;
 }
 
+.row.menu-section .col-md-12 > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* Hide sidebar when screen is small handled by bootstrap hidden-xs/visible-xs */
+
+/* below is css for pricing table */ 
+
+/* Menu tables: item + price columns */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+  border-radius: 8px;
+  overflow: hidden; /* keeps alternating backgrounds clean */
+}
+
+.menu-table tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+.menu-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.menu-table td {
+  padding: 12px 14px;
+  vertical-align: top;
+}
+
+.menu-table .item-name {
+  font-size: 16px;
+  color: #222;
+}
+
+.menu-table .item-price {
+  text-align: right;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #E25111;
+}
+
+/* Optional: subtle separation line */
+.menu-table tbody tr + tr td {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Make long prices/descriptions wrap nicely when needed */
+.menu-table .item-price.wrap {
+  white-space: normal;
+  max-width: 360px;
+}
+
+/* Mobile spacing */
+@media (max-width: 576px) {
+  .menu-table td {
+    padding: 10px 12px;
+  }
+  .menu-table .item-name {
+    font-size: 15px;
+  }
+}
+
+
 
 </style>
 </head>
@@ -219,18 +283,22 @@
           <div class="col-md-12">
             <h2 class="heading">Breakfast</h2>
             <p>On Hard Roll, Bagel, or Brioche Bun</p>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>Egg and Cheese<strong>$5</strong></li>
-                  <li>Ham, Egg and Cheese <strong>$6</strong> </li>
-                  <li>Bacon, Egg and Cheese <strong>$6</strong> </li>
-                  <li>Sausage, Egg and Cheese <strong>$6</strong> </li>
-                  <li>Toasted Bagel w/ Cream Cheese <strong>$2.50</strong> </li>
-                </ul>
+                 <div class="price_body">
+  <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">Egg and Cheese</td><td class="item-price">$5</td></tr>
+    <tr><td class="item-name">Ham, Egg and Cheese</td><td class="item-price">$6</td></tr>
+    <tr><td class="item-name">Bacon, Egg and Cheese</td><td class="item-price">$6</td></tr>
+    <tr><td class="item-name">Sausage, Egg and Cheese</td><td class="item-price">$6</td></tr>
+    <tr><td class="item-name">Toasted Bagel w/ Cream Cheese</td><td class="item-price">$2.50</td></tr>
+  </tbody>
+</table>
+
+</div>
               </div>
             </div>
           </div>
@@ -239,20 +307,22 @@
           <div class="col-md-12">
             <h2 class="heading">Hot Sandwiches</h2>
             <p>6 inch/Hard Roll/Footlong</p>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>Chicken Cutlet  <strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>Meatball <strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>Sausage <strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>Smash Burger (served on a brioche bun) <strong>$8.99</strong> </li>
-                  <li>Chopped Cheese <strong>$6.95 | - | $8.99</strong> </li>
-                  <li>Steak and Cheese <strong>$ 9.99| - | $15.95</strong> </li>
-                  <li>Philly Cheeseteak<strong>$9.99| - | $15.95</strong> </li>
-                </ul>
+                <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">Chicken Cutlet</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">Meatball</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">Sausage</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">Smash Burger (served on a brioche bun)</td><td class="item-price">$8.99</td></tr>
+    <tr><td class="item-name">Chopped Cheese</td><td class="item-price">$6.95 | - | $8.99</td></tr>
+    <tr><td class="item-name">Steak and Cheese</td><td class="item-price">$9.99 | - | $15.95</td></tr>
+    <tr><td class="item-name">Philly Cheeseteak</td><td class="item-price">$9.99 | - | $15.95</td></tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
@@ -261,20 +331,22 @@
           <div class="col-md-12">
             <h2 class="heading">Cold Cuts</h2>
             <p>6 inch/Hard Roll/Footlong/LB</p>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>Turkey  <strong>$7.95 | $7.95 | $9.95 | $9.99</strong> </li>
-                  <li>Turkey Ham <strong>$7.95 | $7.95 | $9.95 | $9.99</strong> </li>
-                  <li>Pastrami<strong>$8.95 | $8.95 | $11.95 | $14.99</strong> </li>
-                  <li>Beef Salami <strong>$7.95 | $7.95 | $9.95 | $12.99</strong> </li>
-                  <li>Roast Beef <strong>$8.95 | $8.95 | $11.95 | $14.99</strong> </li>
-                  <li>BLT<strong>$7.95 | $7.95 | $9.95 | -</strong> </li>
-                  <li>Italian<strong>$8.95 | $8.95 | $11.95 | -</strong> </li>
-                </ul>
+                 <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">Turkey</td><td class="item-price">$7.95 | $7.95 | $9.95 | $9.99</td></tr>
+    <tr><td class="item-name">Turkey Ham</td><td class="item-price">$7.95 | $7.95 | $9.95 | $9.99</td></tr>
+    <tr><td class="item-name">Pastrami</td><td class="item-price">$8.95 | $8.95 | $11.95 | $14.99</td></tr>
+    <tr><td class="item-name">Beef Salami</td><td class="item-price">$7.95 | $7.95 | $9.95 | $12.99</td></tr>
+    <tr><td class="item-name">Roast Beef</td><td class="item-price">$8.95 | $8.95 | $11.95 | $14.99</td></tr>
+    <tr><td class="item-name">BLT</td><td class="item-price">$7.95 | $7.95 | $9.95 | -</td></tr>
+    <tr><td class="item-name">Italian</td><td class="item-price">$8.95 | $8.95 | $11.95 | -</td></tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
@@ -283,19 +355,21 @@
           <div class="col-md-12">
             <h2 class="heading">Classics</h2>
             <p>6 inch/Hard Roll/Footlong</p>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>Buffalo Chicken  <strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>BBQ Chicken<strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>Chicken Salad<strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>Tuna Salad<strong>$7.95 | $7.95 | $9.95</strong> </li>
-                  <li>Chicken Bacon Ranch<strong>$8.95 | $8.95 | $10.95</strong> </li>
-                  <li>Grilled Chicken<strong>$7.95 | $7.95 | $9.95</strong> </li>
-                </ul>
+                 <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">Buffalo Chicken</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">BBQ Chicken</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">Chicken Salad</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">Tuna Salad</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+    <tr><td class="item-name">Chicken Bacon Ranch</td><td class="item-price">$8.95 | $8.95 | $10.95</td></tr>
+    <tr><td class="item-name">Grilled Chicken</td><td class="item-price">$7.95 | $7.95 | $9.95</td></tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
@@ -304,19 +378,21 @@
           <div class="col-md-12">
             <h2 class="heading">Specials</h2>
             <p>Changes Daily</p>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>(Monday) Chicken Pot Pie <strong>$7 per 9" slice or $25 for a whole pie </strong> </li>
-                  <li>(Tuesday) Chili Dogs<strong>2 Chili Dogs for $5</strong> </li>
-                  <li>(Wednesday) Butter Chicken<strong>$10 for a 7 inch platter with a side of lettuce and tomatos</strong> </li>
-                  <li>(Thursday) Beef Tacos<strong>2 Tacos for $5</strong> </li>
-                  <li>(Friday) Beef Biryani<strong>$10 for a 7 inch platter with salad and dressing on the side</strong> </li>
-                  <li>(Friday) Mac 'n Cheese<strong>$10 for a 1LB platter</strong> </li>
-                </ul>
+                 <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">(Monday) Chicken Pot Pie</td><td class="item-price wrap">$7 per 9&quot; slice or $25 for a whole pie</td></tr>
+    <tr><td class="item-name">(Tuesday) Chili Dogs</td><td class="item-price wrap">2 Chili Dogs for $5</td></tr>
+    <tr><td class="item-name">(Wednesday) Butter Chicken</td><td class="item-price wrap">$10 for a 7 inch platter with a side of lettuce and tomatos</td></tr>
+    <tr><td class="item-name">(Thursday) Beef Tacos</td><td class="item-price wrap">2 Tacos for $5</td></tr>
+    <tr><td class="item-name">(Friday) Beef Biryani</td><td class="item-price wrap">$10 for a 7 inch platter with salad and dressing on the side</td></tr>
+    <tr><td class="item-name">(Friday) Mac 'n Cheese</td><td class="item-price wrap">$10 for a 1LB platter</td></tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
@@ -324,19 +400,21 @@
         <div class="row menu-section" id="salads">
           <div class="col-md-12">
             <h2 class="heading">Salads</h2>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>Chicken Mac <strong>$6.99/LB</strong> </li>
-                  <li>BLT Mac <strong>$6.99/LB</strong> </li>
-                  <li>Tuna Mac <strong>$6.99/LB</strong> </li>
-                  <li>Broccoli Pasta <strong>$6.99/LB</strong> </li>
-                  <li>Veggie Mac <strong>$5.99/LB</strong> </li>
-                  <li>Potato Salads <strong>$6.99/LB</strong> </li>
-                </ul>
+                <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">Chicken Mac</td><td class="item-price">$6.99/LB</td></tr>
+    <tr><td class="item-name">BLT Mac</td><td class="item-price">$6.99/LB</td></tr>
+    <tr><td class="item-name">Tuna Mac</td><td class="item-price">$6.99/LB</td></tr>
+    <tr><td class="item-name">Broccoli Pasta</td><td class="item-price">$6.99/LB</td></tr>
+    <tr><td class="item-name">Veggie Mac</td><td class="item-price">$5.99/LB</td></tr>
+    <tr><td class="item-name">Potato Salads</td><td class="item-price">$6.99/LB</td></tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
@@ -344,18 +422,20 @@
         <div class="row menu-section" id="cheeses">
           <div class="col-md-12">
             <h2 class="heading">Cheeses</h2>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>American Cheese <strong>$7.99/LB</strong> </li>
-                  <li>Pepper Jack<strong>$7.99/LB</strong> </li>
-                  <li>Provolone <strong>$7.99/LB</strong> </li>
-                  <li>Swiss <strong>$7.99/LB</strong> </li>
-                  <li>Cheddar <strong>$7.99/LB</strong> </li>
-                </ul>
+                 <table class="menu-table">
+  <tbody>
+    <tr><td class="item-name">American Cheese</td><td class="item-price">$7.99/LB</td></tr>
+    <tr><td class="item-name">Pepper Jack</td><td class="item-price">$7.99/LB</td></tr>
+    <tr><td class="item-name">Provolone</td><td class="item-price">$7.99/LB</td></tr>
+    <tr><td class="item-name">Swiss</td><td class="item-price">$7.99/LB</td></tr>
+    <tr><td class="item-name">Cheddar</td><td class="item-price">$7.99/LB</td></tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
@@ -363,15 +443,27 @@
         <div class="row menu-section" id="toppings">
           <div class="col-md-12">
             <h2 class="heading">Toppings and Sauces</h2>
-            <hr class="heading_space">
           </div>
           <div class="col-sm-12">
             <div class="price padding-bottom">
               <div class="price_body">
-                 <ul class="pricing_feature">
-                  <li>Toppings: Lettuce, tomato, Red onion, cucumber, Bell peppers, spinach, Jalapeno, hot cherry pepper, banana peppers, roasted pepper and onion, pickles, olives </li>
-                  <li>Sauces: Ranch, Ketchup, Mustard, Hot Sauce, Relish, Honey Mustard, Deli Mustard, BBQ, Chipotle Mayo </li>
-                </ul>
+                 <table class="menu-table">
+  <tbody>
+    <tr>
+      <td class="item-name">
+        <strong>Toppings:</strong> Lettuce, tomato, Red onion, cucumber, Bell peppers, spinach, Jalapeno, hot cherry pepper, banana peppers, roasted pepper and onion, pickles, olives
+      </td>
+      <td class="item-price">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="item-name">
+        <strong>Sauces:</strong> Ranch, Ketchup, Mustard, Hot Sauce, Relish, Honey Mustard, Deli Mustard, BBQ, Chipotle Mayo
+      </td>
+      <td class="item-price">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
               </div>
             </div>
           </div>
