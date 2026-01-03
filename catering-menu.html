@@ -22,6 +22,84 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+  <style>
+    /* Catering menu table (scoped so it won't touch other tables) */
+.catering-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.catering-table tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+.catering-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.catering-table td {
+  padding: 12px 14px;
+  vertical-align: top;
+}
+
+.catering-table .item-name {
+  font-size: 16px;
+  color: #222;
+}
+
+.catering-table .item-price {
+  text-align: right;
+  font-weight: 700;
+  color: #E25111;
+  white-space: nowrap;
+}
+
+/* Optional: if a price string is long, allow wrapping neatly */
+.catering-table .item-price.wrap {
+  white-space: normal;
+  max-width: 320px;
+}
+
+/* Subtle separators (optional) */
+.catering-table tbody tr + tr td {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.price-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.price-stack span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #E25111;
+}
+
+.price-stack span em {
+  font-style: normal;
+  font-weight: 400;
+  color: #777;
+  margin-right: 6px;
+}
+
+
+/* Small screens */
+@media (max-width: 576px) {
+  .catering-table td {
+    padding: 10px 12px;
+  }
+  .catering-table .item-name {
+    font-size: 15px;
+  }
+}
+
+  </style>
+
 </head>
 
 <body>
@@ -135,35 +213,234 @@
     </div>
     <div class="row">
     <div class="col-md-6">
-        <ul class="menu_widget">
-          <li>Egg &amp; Cheese<span>$5.00</span></li>
-          <li>Ham, Egg &amp; Cheese<span>$6.00</span></li>
-          <li>Bacon, Egg &amp; Cheese<span>$6.00</span></li>
-          <li>Sausage, Egg &amp; Cheese<span>$6.00</span></li>
-          <li>Chicken Cutlet<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Meatball<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Sausage<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Smash Burger<span>Brioche Roll $8.99</span></li>
-          <li>Chopped Cheese<span>6&quot; $6.95 | Footlong $8.99</span></li>
-          <li>Steak &amp; Cheese<span>6&quot; $9.99 | Footlong $15.95</span></li>
-          <li>Philly Cheesesteak<span>6&quot; $9.99 | Footlong $15.95</span></li>
-        </ul>
+        <table class="catering-table">
+  <tbody>
+    <tr>
+      <td class="item-name">Egg &amp; Cheese</td>
+      <td class="item-price">$5.00</td>
+    </tr>
+    <tr>
+      <td class="item-name">Ham, Egg &amp; Cheese</td>
+      <td class="item-price">$6.00</td>
+    </tr>
+    <tr>
+      <td class="item-name">Bacon, Egg &amp; Cheese</td>
+      <td class="item-price">$6.00</td>
+    </tr>
+    <tr>
+      <td class="item-name">Sausage, Egg &amp; Cheese</td>
+      <td class="item-price">$6.00</td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Chicken Cutlet</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Meatball</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Sausage</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Smash Burger</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>Brioche Roll</em> $8.99</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Chopped Cheese</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $6.95</span>
+          <span><em>Footlong</em> $8.99</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Steak &amp; Cheese</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $9.99</span>
+          <span><em>Footlong</em> $15.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Philly Cheesesteak</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $9.99</span>
+          <span><em>Footlong</em> $15.95</span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
       </div>
 
     <div class="col-md-6">
-        <ul class="menu_widget">
-          <li>Buffalo Chicken<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>BBQ Chicken<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Chicken Salad<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Tuna Salad<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Chicken Bacon Ranch<span>6&quot; $8.95 | Hard Roll $8.95 | Footlong $10.95</span></li>
-          <li>Grilled Chicken<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95</span></li>
-          <li>Turkey<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95 | Per LB $9.99</span></li>
-          <li>Turkey Ham<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95 | Per LB $9.99</span></li>
-          <li>Pastrami<span>6&quot; $8.95 | Hard Roll $8.95 | Footlong $11.95 | Per LB $14.99</span></li>
-          <li>Beef Salami<span>6&quot; $7.95 | Hard Roll $7.95 | Footlong $9.95 | Per LB $12.99</span></li>
-          <li>Roast Beef<span>6&quot; $8.95 | Hard Roll $8.95 | Footlong $11.95 | Per LB $14.99</span></li>
-</ul>
+       <table class="catering-table">
+  <tbody>
+    <tr>
+      <td class="item-name">Buffalo Chicken</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">BBQ Chicken</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Chicken Salad</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Tuna Salad</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Chicken Bacon Ranch</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $8.95</span>
+          <span><em>Hard Roll</em> $8.95</span>
+          <span><em>Footlong</em> $10.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Grilled Chicken</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Turkey</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+          <span><em>Per LB</em> $9.99</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Turkey Ham</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+          <span><em>Per LB</em> $9.99</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Pastrami</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $8.95</span>
+          <span><em>Hard Roll</em> $8.95</span>
+          <span><em>Footlong</em> $11.95</span>
+          <span><em>Per LB</em> $14.99</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Beef Salami</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $7.95</span>
+          <span><em>Hard Roll</em> $7.95</span>
+          <span><em>Footlong</em> $9.95</span>
+          <span><em>Per LB</em> $12.99</span>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="item-name">Roast Beef</td>
+      <td class="item-price">
+        <div class="price-stack">
+          <span><em>6"</em> $8.95</span>
+          <span><em>Hard Roll</em> $8.95</span>
+          <span><em>Footlong</em> $11.95</span>
+          <span><em>Per LB</em> $14.99</span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
       </div>
       <div class="col-md-12 grid_layout"><!-- 
       <div class="row">
