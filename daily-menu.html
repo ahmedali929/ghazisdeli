@@ -257,6 +257,78 @@
   }
 }
 
+/* Floating Order Now button (sits above back-top) */
+.order-float{
+  position: fixed;
+  right: 18px;
+  bottom: calc(24px + 56px + 16px); /* above the back-top button */
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #e25111;
+  color: #fff;
+  text-decoration: none;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-family: "BebasRegular", sans-serif;
+  font-size: 18px;
+  letter-spacing: .6px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.22);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+
+}
+
+/* Make Order button mimic #back-top visibility */
+#order-float{
+  opacity: 0;
+  pointer-events: none; /* prevents clicks when hidden */
+}
+
+#order-float.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.order-float:hover,
+.order-float:focus{
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.22);
+  outline: none;
+}
+
+.order-float i{
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Ensure back-top sits at a known position */
+#back-top{
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  z-index: 9998;
+}
+
+/* Mobile: make it a bit tighter */
+@media (max-width: 576px){
+  #back-top{
+    right: 14px;
+    bottom: 18px;
+  }
+  .order-float{
+    right: 14px;
+    bottom: 86px;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+}
 
 
 </style>
@@ -902,6 +974,10 @@
   </div>
 </footer>
 
+<!-- Floating Order Now button -->
+<a href="order.html" id="order-float" class="order-float" aria-label="Order Now">
+  <span>Order Now</span>
+</a>
 <a href="#." id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
 
 <script src="js/jquery-2.2.3.js" type="text/javascript"></script>
@@ -992,6 +1068,32 @@
   }
 })();
 </script>
+
+<script>
+(function () {
+  const backTop = document.getElementById('back-top');
+  const orderFloat = document.getElementById('order-float');
+  if (!backTop || !orderFloat) return;
+
+  function sync() {
+    orderFloat.classList.toggle('show', backTop.classList.contains('show'));
+  }
+
+  // Run once on load
+  sync();
+
+  // Keep syncing whenever back-top changes (best: no guessing thresholds)
+  if ('MutationObserver' in window) {
+    const mo = new MutationObserver(sync);
+    mo.observe(backTop, { attributes: true, attributeFilter: ['class'] });
+  } else {
+    // Fallback: sync on scroll/resize
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+  }
+})();
+</script>
+
 
 </body>
 </html>
