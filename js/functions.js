@@ -424,7 +424,7 @@ function register($form) {
 					$("#result1").hide().html(resultMessage).slideDown(200);
 					}
             } else {
-                resultMessage = "<div class='alert-success'>Thank you! Please check your email.</div>";
+                resultMessage = "<div class='alert-success'>Thank you for subscribing!</div>";
 		        $("#result1").hide().html(resultMessage).slideDown(200);
 				$("form.newsletter").hide().slideUp(200); 		
             }		

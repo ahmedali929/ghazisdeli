@@ -105,6 +105,97 @@
   pointer-events: none;
 }
 
+/* Raffle block styling */
+.raffle-block {
+  padding-top: 8px;
+}
+
+.raffle-copy {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff; /* assuming your paralax section is dark */
+}
+
+.raffle-subcopy {
+  opacity: 0.95;
+}
+
+/* Form layout */
+.raffle-form {
+  margin: 16px auto 10px;
+  max-width: 560px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.raffle-form input[type="email"] {
+  flex: 1 1 280px;
+  height: 46px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  outline: none;
+}
+
+.raffle-form input[type="email"]::placeholder {
+  color: rgba(255,255,255,0.75);
+}
+
+.raffle-form input[type="email"]:focus {
+  border-color: #E25111;
+  box-shadow: 0 0 0 3px rgba(226,81,17,0.25);
+}
+
+/* Button */
+.raffle-form button {
+  height: 46px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 6px;
+  background: #E25111;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: transform 0.08s ease, opacity 0.15s ease;
+}
+
+.raffle-form button:hover {
+  opacity: 0.95;
+}
+
+.raffle-form button:active {
+  transform: translateY(1px);
+}
+
+/* Micro consent line */
+.raffle-micro {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.8);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile tightening */
+@media (max-width: 480px) {
+  .raffle-form {
+    gap: 8px;
+  }
+  .raffle-form input[type="email"],
+  .raffle-form button {
+    width: 100%;
+  }
+}
+
+
 
 </style>
 
@@ -464,11 +555,29 @@
     <div class="row">
       <div class="col-md-2"> </div>
       <div class="col-md-8">
-         <div class="text-center">
-         <h2 class="heading_space">Weekly Raffles!</h2>
-         <p class="heading_space detail">We love giving back to our community. Sign up with your email for a chance to win a free, freshly made sandwich every week — no purchase required. We promise to keep emails minimal and worthwhile.</p>
-         <a href="#order-form" class="btn-common-white page-scroll">Join the Raffle</a>
-         </div>          
+         <div class="text-center raffle-block">
+          <h2 class="heading_space">Win a Free Sandwich</h2>
+
+          <p class="heading_space detail raffle-copy">
+            Enter our weekly raffle for a <strong>fresh, made-to-order sandwich</strong> — on us.
+            <br class="hidden-xs">
+            <span class="raffle-subcopy">No purchase required. Takes 5 seconds.</span>
+          </p>
+
+          <form class="raffle-form"
+                action="https://ghazisdeli.us10.list-manage.com/subscribe/post?u=4d547cdc6abd0e66c96f1ab7a&amp;id=5f72695f4b&amp;f_id=002ac7e5f0"
+                method="post"
+                target="_blank"
+                novalidate>
+            <input type="email" name="EMAIL" placeholder="Email address" required aria-label="Email address">
+            <input type="hidden" name="tags" value="raffle">
+            <button type="submit">Enter the Raffle</button>
+          </form>
+
+          <p class="raffle-micro">
+            We’ll only email you about the raffle + occasional deli updates. Unsubscribe anytime.
+          </p>
+        </div>
       </div>
       <div class="col-md-2"></div>
     </div>
@@ -736,7 +845,7 @@
   <hr class="heading_space">
 
   <p class="order-cta-text">
-    Order for pickup or delivery by caliing us at <strong>860-632-2442</strong> or placing an order on Uber Eats. Doordash, Grubhub, and more services coming soon!
+    Order for pickup or delivery by calling us at <strong>860-632-2442</strong> or placing an order on Uber Eats. Doordash, Grubhub, and more services coming soon!
   </p>
 
   <a href="order.html" class="order-cta-btn">
@@ -876,17 +985,25 @@
       <div class="col-md-3 col-sm-6 footer_column">
         <h4 class="heading">Newsletter</h4>
         <hr class="half_space">
-        <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get fresh updates.</p>
+        <p class="icon"><i class="icon-dollar"></i>Sign up with your email to get fresh updates.</p>
         <div id="result1" class="text-center"></div>        
         
-       <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
-          <div class="form-group">
-            <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn-submit button3" value="Subscribe" />
-          </div>
-        </form>
+       <form
+  action="https://ghazisdeli.us10.list-manage.com/subscribe/post-json?u=4d547cdc6abd0e66c96f1ab7a&amp;id=5f72695f4b&amp;f_id=002ac7e5f0&amp;c=?"
+  method="get"
+  onsubmit="return false"
+  class="newsletter">
+
+  <div class="form-group">
+    <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+    <input type="hidden" name="tags" value="newsletter">
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="btn-submit button3" value="Subscribe" />
+  </div>
+</form>
+
       </div>
       <div class="col-md-3 col-sm-6 footer_column">
         <h4 class="heading">Get in Touch</h4>
