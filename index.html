@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -173,6 +173,63 @@
   transform: translateY(1px);
 }
 
+.hero-update-banner {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background: url("images/banner2-smokedmeat.jpg") center center / cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-update-banner:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.52) 45%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.hero-update-banner .banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  padding: 90px 0 80px;
+}
+
+.hero-update-banner .banner-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(226, 81, 17, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-update-banner h1 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: 54px;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.hero-update-banner p {
+  margin: 0 0 16px;
+  max-width: 690px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.hero-update-banner .banner-actions {
+  margin-top: 26px;
+}
+
 /* Micro consent line */
 .raffle-micro {
   margin-top: 8px;
@@ -186,6 +243,19 @@
 
 /* Mobile tightening */
 @media (max-width: 480px) {
+  .hero-update-banner {
+    min-height: 440px;
+  }
+  .hero-update-banner .banner-content {
+    padding: 70px 0 60px;
+  }
+  .hero-update-banner h1 {
+    font-size: 34px;
+  }
+  .hero-update-banner p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
   .raffle-form {
     gap: 8px;
   }
@@ -255,7 +325,16 @@
   </div>
 </header>
 
-
+<section class="hero-update-banner">
+  <div class="container">
+    <div class="banner-content">
+      <span class="banner-label">Important Update</span>
+      <h1><span class="small_title">We are going through some changes</span><br>Serving <span class="color">5am to 9am</span> for now.</h1>
+      <p>We are currently focusing on fresh breakfast sandwiches and hot coffee, with more coffee options and pastries coming soon. We will expand our hours and operations soon as we continue to grow.</p>
+      <p>In the meantime, you can still order our delicious sandwiches and salads in the morning. Order your lunch on your way to work and before you start your day so it is ready when you need it!</p>
+    </div>
+  </div>
+</section>
 
 <!-- REVOLUTION SLIDER -->			
 
@@ -291,7 +370,7 @@
                           data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
                           data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
                           data-start="800"
-                          style="z-index: 9;">Family-run deli serving zabiha halal food made fresh daily — healthy, delicious, and affordable for everyone.</p>
+                          style="z-index: 9;">Family-run deli serving zabiha halal food made fresh daily â€” healthy, delicious, and affordable for everyone.</p>
                         <div class="tp-caption fade tp-resizeme"
                            data-x="left" data-hoffset="15"
                            data-y="280"
@@ -333,7 +412,7 @@
                           data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
                           data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
                           data-start="800"
-                          style="z-index: 9;">From our kitchen to your table — wholesome ingredients, homemade recipes, and flavors you can taste in every bite.</p>
+                          style="z-index: 9;">From our kitchen to your table â€” wholesome ingredients, homemade recipes, and flavors you can taste in every bite.</p>
 							
                             
                           <div class="tp-caption fade tp-resizeme"
@@ -378,7 +457,7 @@
                           data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
                           data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
                           data-start="800"
-                          style="z-index: 9;">Healthy meals, generous portions, and fair prices — proudly serving our community every day.</p>
+                          style="z-index: 9;">Healthy meals, generous portions, and fair prices â€” proudly serving our community every day.</p>
 							
                            <div class="tp-caption fade tp-resizeme"
                            data-x="right" data-hoffset=""
@@ -427,7 +506,7 @@
       <div class="col-md-3 col-sm-6 feature text-center">
         <i class="icon-bowl"></i>
         <h3><a href="services.html">Salads</a></h3>
-        <p>Fresh, wholesome salads and hearty pastas prepared daily — healthy options without sacrificing taste.</p>
+        <p>Fresh, wholesome salads and hearty pastas prepared daily â€” healthy options without sacrificing taste.</p>
       </div>
       <div class="col-md-3 col-sm-6 feature text-center">
         <i class="icon-coffee"></i>
@@ -456,7 +535,7 @@
               <a  href="services.html"></a>
             </div>
               <h3><a href="services.html">Bacon, Egg, and Cheese</a></h3>
-              <p>Crispy bacon, fluffy eggs, and melted cheese on a fresh roll — the perfect start to any morning.</p>
+              <p>Crispy bacon, fluffy eggs, and melted cheese on a fresh roll â€” the perfect start to any morning.</p>
             </div>
           </div>
           <div class="item">
@@ -496,7 +575,7 @@
      <div class="row">
       <div class="col-md-12">
     <a href="order.html" class="order-cta-btn">
-    Order Now →
+    Order Now â†’
   </a>
 </div>
 </div>
@@ -514,7 +593,7 @@
           <h2 class="heading_space">Win a Free Sandwich</h2>
 
           <p class="heading_space detail raffle-copy">
-            Enter our weekly raffle for a <strong>fresh, made-to-order sandwich</strong> — on us.
+            Enter our weekly raffle for a <strong>fresh, made-to-order sandwich</strong> â€” on us.
             <br class="hidden-xs">
             <span class="raffle-subcopy">No purchase required. Takes 5 seconds.</span>
           </p>
@@ -530,7 +609,7 @@
           </form>
 
           <p class="raffle-micro">
-            We’ll only email you about the raffle + occasional deli updates. Unsubscribe anytime.
+            Weâ€™ll only email you about the raffle + occasional deli updates. Unsubscribe anytime.
           </p>
         </div>
       </div>
@@ -773,11 +852,11 @@
           <p>Daniel Wiley</p>
         </div>
         <div class="item">
-          <h3>Ghazi’s feels like a neighborhood staple already. Fresh food, and you can tell it’s family-run by the care they put into everything.</h3>
+          <h3>Ghaziâ€™s feels like a neighborhood staple already. Fresh food, and you can tell itâ€™s family-run by the care they put into everything.</h3>
           <p>Johnny Ruiz</p>
         </div>
         <div class="item">
-          <h3>You can really taste the freshness here. Everything feels homemade, the portions are generous, and knowing it’s zabiha halal makes it our go-to spot.</h3>
+          <h3>You can really taste the freshness here. Everything feels homemade, the portions are generous, and knowing itâ€™s zabiha halal makes it our go-to spot.</h3>
           <p>Murtaza Amjad</p>
         </div>
         <div class="item">
@@ -804,7 +883,7 @@
   </p>
 
   <a href="order.html" class="order-cta-btn">
-    Order Now →
+    Order Now â†’
   </a>
 
 </div>
@@ -924,7 +1003,7 @@
       <div class="col-md-3 col-sm-6 footer_column">
         <h4 class="heading">Why Ghazi's?</h4>
         <hr class="half_space">
-        <p class="half_space">Fresh, homemade, and proudly halal — that’s the Ghazi’s difference. We’re a family-run deli committed to quality ingredients, honest portions, and great flavor. From breakfast sandwiches to delicious pastries, everything is made fresh and priced fairly. Once you try us, you’ll taste the difference.</p>
+        <p class="half_space">Fresh, homemade, and proudly halal â€” thatâ€™s the Ghaziâ€™s difference. Weâ€™re a family-run deli committed to quality ingredients, honest portions, and great flavor. From breakfast sandwiches to delicious pastries, everything is made fresh and priced fairly. Once you try us, youâ€™ll taste the difference.</p>
       </div>
       <div class="col-md-3 col-sm-6 footer_column">
         <h4 class="heading">Hours</h4>
@@ -1035,39 +1114,10 @@
 
 
 
-<!-- Weather Closure Modal 
-<div class="modal fade" id="weatherNotice" tabindex="-1" role="dialog" aria-labelledby="weatherNoticeLabel">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="weatherNoticeLabel">
-          Important Notice
-        </h4>
-      </div>
-      <div class="modal-body">
-        <p>
-          <strong>Ghazi’s Deli will be closed Monday, January 26th, 2026</strong><br>
-          due to inclement weather.
-        </p>
-        <p>Stay safe and we’ll see you soon!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-common btn-orange" data-dismiss="modal">
-          OK
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  $(window).on('load', function () {
-    $('#weatherNotice').modal('show');
-  });
-</script> -->
 
 
 </body>
 </html>
+
+
+
